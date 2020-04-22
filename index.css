@@ -1,0 +1,21 @@
+body {
+    font-family: Sans-Serif;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: Sans-Serif;
+}
+
+#menu button {
+    color: #7f7f7f;
+}
+
+#menu button:hover {
+    color: black
+}
+
+#menu button.selected {
+    color: black
+}

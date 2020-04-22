@@ -1,0 +1,9 @@
+div#menu {
+    display: flex;
+    justify-content: center;
+}
+
+#menu button{
+    font-size: 30pt;
+    margin: 50px;
+}

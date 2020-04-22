@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Jim Harter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" media="screen and (min-device-width: 1200px)" href="index1200.css">
+    </head>
+    <body>
+        <div id="app">
+            <div id="menu">
+                <button v-bind:class="{selected: selectedSection === 'highlights'}" v-on:click="selectedSection = 'highlights'">Highlights</button>
+                <button v-bind:class="{selected: selectedSection === 'collections'}" v-on:click="selectedSection = 'collections'">Collections</button>
+            </div>
+            <component v-bind:is="selectedSection">
+        </div>
+        <script>
+            const highlightsComponent = {
+                data: () => ({}),
+                template: '<div>Highlights</div>'
+            };
+            
+            const collectionsComponent = {
+                data: () => ({}),
+                template: '<div>Collections</div>'
+            };
+
+            const app = new Vue({
+                el: "#app",
+                components: {
+                    highlights: highlightsComponent,
+                    collections: collectionsComponent
+                },
+                data: {
+                    selectedSection: "highlights"
+                }
+            })
+        </script>
+    </body>
+</html>
